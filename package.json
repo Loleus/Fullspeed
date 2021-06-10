@@ -1,0 +1,25 @@
+{
+  "name": "fullspeed",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node esbuild.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Łukasz Kamiński",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.8.43"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-proposal-private-methods": "^7.12.13",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "esbuild-plugin-babel": "^0.2.0"
+  },
+  "description": ""
+}

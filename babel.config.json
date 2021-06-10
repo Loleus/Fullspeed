@@ -1,0 +1,10 @@
+{
+    "sourceMaps": "inline",
+    "presets": [],
+    "plugins": [
+        ["@babel/plugin-proposal-private-methods", { "loose": true }],
+        ["@babel/plugin-syntax-class-properties"],
+        ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    ]
+
+}

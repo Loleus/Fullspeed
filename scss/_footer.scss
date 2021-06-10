@@ -1,0 +1,69 @@
+.footer {
+  z-index: 8;
+  position: absolute;
+  bottom: 13%;
+  width: 100%;
+  height: 10%;
+
+  .interface {
+    position: relative;
+    margin: 0 auto;
+
+    &__steer {
+      font-family: "Courier New", Courier, monospace;
+      width: 45px;
+      height: 45px;
+      border: none;
+      z-index: 8;
+      user-select: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      border: 3px solid #38ec13bd;
+      background: #2d7020c2;
+
+      span {
+        user-select: inherit;
+        background: #38ec13bd;
+        color: none;
+        height: 100%;
+        display: block;
+
+        &:hover {
+          cursor: pointer;
+          background: white;
+          color: none;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      &--left {
+        left: 12px;
+
+        span {
+          clip-path: polygon(80% 20%, 80% 80%, 10% 50%);
+        }
+      }
+
+      &--right {
+        left: 80px;
+
+        span {
+          clip-path: polygon(20% 20%, 20% 80%, 90% 50%);
+        }
+      }
+
+      &--brake {
+        left: calc(100% - 58px);
+
+        span {
+          clip-path: polygon(25% 25%, 75% 25%, 75% 75%, 25% 75%);
+          background: #df0d0d;
+        }
+      }
+
+    }
+  }
+}

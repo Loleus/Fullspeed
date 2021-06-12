@@ -30,33 +30,36 @@ export default class Player extends Driver {
   dist() {
     return Math.floor(this.distance);
   }
-  
-  update(fps, flag) {
+  update(fps, isPlaying) {
     this.counters(fps);
-    let xRatio = 65;
-    let rRatio = 25;
-    let aRatio = 32;
-    let bRatio = 60; 
-    let self = this;
-    let spd = self.speed;
-    let msd = self.maxSpeed;
-    let rot = self.r;
-    let { l, r, b } = self.I
-    let left = l && spd > 0;
-    let right = r && spd > 0;
-    let maxDrift = 10 * fps / spd;
-    let leftDrift = (rot > -maxDrift)
-    let rightDrift = (rot < maxDrift)
+    this.sety(this.newYpos())
 
-    if (flag) {
+    const spd = this.spd();
+    const leftMax = this.x;
+    const rightMax = this.x < 260;
+    const msd = this.maxSpeed;
+    const {l, r, b} = this.I
+    const xDrift = 5;
+    const rRatio = 25;
+    const aRatio = 32;
+    const bRatio = 60;
+    const xRatio = 65;
+    const left = l && spd;
+    const right = r && spd;
+    const rValue = (rRatio / fps)
+    const leftDrift = (this.r > -xDrift)
+    const rightDrift = (this.r < xDrift)
+    const xValue = Math.round(xRatio / fps)
+
+    if (isPlaying) {
       if (left) {
-        !leftDrift ? (this.r = maxDrift * (-1)) : (this.r -= (rRatio / fps));
-        this.x > 0 ? (this.x -= Math.round(xRatio / fps)) : (this.I.l = false);
+        !leftDrift ? (this.r = xDrift * (-1)) : (this.r -= (rValue));
+        leftMax ? (this.x -= xValue) : !this.I.l;
       } else if (right) {
-        !rightDrift ? (this.r = maxDrift) : (this.r += rRatio / fps);
-        this.x < 260 ? (this.x += Math.round(xRatio / fps)) : (this.I.r = false);
+        !rightDrift ? (this.r = xDrift) : (this.r += rValue);
+        rightMax ? (this.x += xValue) : !this.I.r;
       } else {
-        rot != 0 ? (rot > 0 ? (this.r -= rRatio / fps) : (this.r += rRatio / fps)) : this.r;
+        this.r != 0 ? (this.r > 0 ? (this.r -= rValue) : (this.r += rValue)) : this.r;
       }
       if (!b) {
         spd < msd ? (this.speed += aRatio / fps) : (this.speed = msd);
@@ -65,12 +68,8 @@ export default class Player extends Driver {
       }
     } else {
       this.speed = 0;
+      this.sety(400);
     }
-    this.render(flag);
-  }
-
-  render(playing) {
-    playing ? this.sety(this.newYpos()) : this.sety(400);
     this.car.style.transform = `translate(${this.x}px, ${this.y}px) rotate(${this.r}deg)`;
   }
 }

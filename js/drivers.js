@@ -2,6 +2,9 @@ import Rnd from './rand.js';
 export default class Driver {
 
   constructor(id) {
+    this.speed = 0;
+    this.y = 0;
+    this.x = 0;
     this.w = 35;
     this.h = 89;
     this.id = id;

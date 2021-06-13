@@ -38,30 +38,27 @@ export default class Game {
   }
 
   conditioning(e_name, e) {
+    let s = this.snd;
     switch (e_name) {
       case "start":
         this.play = true;
-        if (this.play) {
-          this.M.playing();;
+          this.M.playing();
           this.lastTime = Date.now();
           this.render();
-          if (this.snd) {
+          if (s) {
             this.S.start();
           }
-        } else {
-          this.sound.music.pause;
-          return;
-        }
         break;
       case "music":
         let sound = (e) => {
-          if (!this.snd) {
-            this.snd = true;
+          if (!s) {
+            s = true;
             e.target.classList.add("active");
           } else {
-            this.snd = false;
+            s = false;
             e.target.classList.remove("active");
           }
+          this.snd = s
         }
         return sound(e);
         break;
@@ -104,21 +101,17 @@ export default class Game {
     this.update()
     this.play ? this.setTimeoutLoop(delay) : null;
   }
-
-  update() {
-    this.P.update(this.FPS, this.play);
-
+  oppUpdate() {
     for (let i = 0; i < this.OPP.length; i++) {
       let elem = this.OPP[i];
-      elem.update(this.t(),this.P, this.FPS);
-
-      if (elem.intersect(elem, this.P)) {
-        return this.endGame();
-      };
-      elem.render();
+      elem.update(this.t(), this.P, this.FPS);
+      elem.intersect(elem, this.P) ? this.endGame() : null;
     }
+  }
+  update() {
+    this.P.update(this.FPS, this.play);
+    this.oppUpdate()
     this.R.update(this.P.spd(), this.interval);
-    this.R.render();
     this.F.render(this.P.dist(), this.P.spd(), this.t(), this.P.fSpd());
   }
   endGame() {

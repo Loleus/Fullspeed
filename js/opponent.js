@@ -3,9 +3,6 @@ export default class Other extends Driver {
   constructor(args) {
     super(args);
     this.car = document.getElementById(`op${this.id}`);
-    this.speed = 0;
-    this.y = 0;
-    this.x = 0;
     this.track = this.RNG.tracks[this.id];
   }
   init() {
@@ -25,17 +22,23 @@ export default class Other extends Driver {
     }
     return false;
   }
-  update(time, player, fps) {
+  update(time, p, fps) {
+    let pSpd = p.spd();
+    let {loop,speed, rnd} = this
+    let y = this.gety();
+    let x = this.getx();
+    let {abs} = Math;
     if (time >= 3) {
-      if (this.gety() < this.loop || Math.abs(this.gety()) > Math.abs(this.loop)) {
-        this.init(this.rnd)
+      if (y < loop || abs(y) > abs(loop)) {
+        this.init(rnd)
       } else {
-        let newPos = (this.gety() + (player.spd() - this.speed) / fps);
+        let newPos = (y + (pSpd - speed) / fps);
         this.sety(newPos);
       }
     }
+    this.render(x,y)
   }
-  render() {
-    this.car.style.transform = `translate(${this.getx()}px, ${this.gety()}px) scale(${this.id != 0 ? 1 : -1})`;
+  render(x,y) {
+    this.car.style.transform = `translate(${x}px, ${y}px) scale(${this.id != 0 ? 1 : -1})`;
   }
 }

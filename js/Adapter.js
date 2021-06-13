@@ -15,9 +15,7 @@ export default class Adapter {
   menu(e) {
     e.cancelable ? e.preventDefault() : null;
     e.stopPropagation();
-    let e_name = !e.target.id ?
-      "data-toggle-fullscreen" :
-      e.target.id;
+    let e_name = !e.target.id ? "data-toggle-fullscreen" : e.target.id;
     if (e_name) {
       return this.G.conditioning(e_name, e);
     }

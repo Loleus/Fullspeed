@@ -4,9 +4,12 @@ export default class Info {
     }
   
     render(dist, speed, time, fullSpeedTime) {
-      this.disp[0].textContent = dist;
-      this.disp[1].textContent = speed;
-      this.disp[2].textContent = time;
-      this.disp[3].textContent = fullSpeedTime;
-    }
+      let arr = (i, string) => {
+        return this.disp[i].textContent = string;
+      }
+      arr(0,dist)
+      arr(1,speed)
+      arr(2,time)
+      arr(3,fullSpeedTime)
   }
+}

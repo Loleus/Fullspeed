@@ -6,6 +6,6 @@ Main loop in setTimeout with delta time ratio.
 Randomized opponents car parameters.
 Control by keyboard or touch.
 
-Try it out: https://loleus.github.io/Fullspeed/
+Try it out: https://loleus.github.io/fullspeed/
 
 ### Bicycle photo in background by me.

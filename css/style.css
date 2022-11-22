@@ -97,7 +97,7 @@
 }
 .root .main a.button.active,
 .root .main a.button:active {
-  padding: 1px 2px 2px 4px;
+  padding: 5px 2px 2px 4px;
   box-shadow: 0 0 1px 0px black;
   color: #38ec13;
   background: #23532d;

@@ -16,30 +16,25 @@
     text-align: center;
     box-shadow: 3px 3px 3px -1px #07070a;
     border: 2px outset #636364;
-    background: #48474e;
+    background: #97b7bc3d;
+    backdrop-filter: blur(4px);
+  }
 
-    a.button {
-      border-radius: 15px;
-      box-shadow: 2px 2px 2px -1px #07070a;
-      display: block;
-      padding: 4px 3px 3px;
-      width: 115px;
-      border: 2px solid #5f5f61;
-      color: #8dc9ce;
-      text-shadow: 0 0 5px #38ec13;
-      border-width: 2px 0 0 2px;
-      border-style: solid;
-      margin: 10px auto;
-      background: rgb(102, 102, 102);
-      line-height: 30px;
-      font-size: 26px;
-      cursor: pointer;
-      border-style: inset;
-    }
+  a.button {
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px -1px #07070a;
+    display: block;
+    padding: 4px 3px 3px;
+    width: 115px;
+    color: #bed4d0;
+    margin: 10px auto;
+    background: rgb(102, 102, 102);
+    line-height: 30px;
+    font-size: 26px;
+    cursor: pointer;
   }
   a.button.active,
   a.button:active {
-    padding: 1px 2px 2px 4px;
     box-shadow: 0 0 1px 0px black;
     color: #38ec13;
     background: #23532d;

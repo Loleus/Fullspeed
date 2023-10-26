@@ -5,14 +5,14 @@
   overflow: hidden;
   margin: auto;
   border-radius: 45px;
-  border: 16px solid #666;
+  border: 16px solid #b9a395b8;
   box-sizing: border-box;
   box-shadow: 7px 8px 3px -1px rgb(0, 0, 0);
 
   @import "header";
   @import "main";
   @import "road";
-  @import "footer";
+
   
   .hide {
     display: none;
@@ -39,6 +39,7 @@
 }
 
 @media (min-width: 320px) and (max-width: 1024px) {
+  @import "footer";
   .root {
     margin: 0 auto;
   }

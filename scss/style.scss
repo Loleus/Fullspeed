@@ -30,12 +30,13 @@ body {
   height: 100vh;
   box-sizing: inherit;
   background: radial-gradient(circle at center,
-      rgb(38, 30, 116) 0%,
-      rgb(21, 66, 56) 100%),
+      rgb(41, 51, 58) 0%,
+      rgb(21, 49, 66) 100%),
     url(../assets/img/bcg.jpg);
   background-size: cover;
   background-position: right;
-  background-blend-mode: screen;
+  background-blend-mode: saturation;
+  backdrop-filter: blur(3px);
   overflow: hidden;
 
   &:after {

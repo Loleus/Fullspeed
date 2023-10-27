@@ -72,9 +72,11 @@ export default class Game {
 
         if (document.fullscreenElement) {
           e.target.textContent = "Screen";
+          e.target.classList.remove("active");
           document.exitFullscreen();
         } else {
           e.target.textContent = "Window";
+          e.target.classList.add("active");
           document.documentElement.requestFullscreen();
         }
         break;

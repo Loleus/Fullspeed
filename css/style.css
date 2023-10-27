@@ -28,10 +28,10 @@
   font-family: "Faster One", cursive;
   font-size: 3.5rem;
   line-height: 2.7rem;
-  color: #b05555;
+  color: #c60e0e;
 }
 .root .header .banner .title:nth-child(1) {
-  color: #537ca0;
+  color: #1372c5;
   font-size: 4rem;
 }
 .root .header .info {
@@ -39,13 +39,13 @@
   bottom: 6px;
   left: 6px;
   right: 6px;
-  padding: 6px 0 0px;
+  padding: 6px 0 2px;
   text-align: center;
   background: rgba(15, 75, 3, 0.7411764706);
   border-radius: 25% 25% 23px 23px;
-  border-top: 2px solid #38ec13;
-  color: #38ec13;
-  text-shadow: 0 0 3px #38ec13;
+  border-top: 2px solid #15b536;
+  color: #c2e6bb;
+  text-shadow: 0 0 1px #13ec72;
   font-size: 0.9em;
   line-height: 1em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -69,15 +69,13 @@
   z-index: 7;
 }
 .root .main .select {
-  margin: 130px auto 0;
+  margin: 134px auto 0;
   padding: 11px 0;
-  width: 200px;
   height: auto;
-  border-radius: 30px;
   text-align: center;
   box-shadow: 3px 3px 3px -1px #07070a;
   border: 2px outset #636364;
-  background: rgba(151, 183, 188, 0.2392156863);
+  background: rgba(182, 188, 151, 0.02);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
 }
@@ -87,7 +85,7 @@
   display: block;
   padding: 4px 3px 3px;
   width: 115px;
-  color: #bed4d0;
+  color: #f2dfb3;
   margin: 10px auto;
   background: rgb(102, 102, 102);
   line-height: 30px;
@@ -264,10 +262,12 @@ body {
   display: flex;
   height: 100vh;
   box-sizing: inherit;
-  background: radial-gradient(circle at center, rgb(38, 30, 116) 0%, rgb(21, 66, 56) 100%), url(../assets/img/bcg.jpg);
+  background: radial-gradient(circle at center, rgb(41, 51, 58) 0%, rgb(21, 49, 66) 100%), url(../assets/img/bcg.jpg);
   background-size: cover;
   background-position: right;
-  background-blend-mode: screen;
+  background-blend-mode: saturation;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   overflow: hidden;
 }
 body:after {

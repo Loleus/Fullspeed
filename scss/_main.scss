@@ -8,15 +8,13 @@
   z-index: 7;
 
   .select {
-    margin: 130px auto 0;
+    margin: 134px auto 0;
     padding: 11px 0;
-    width: 200px;
     height: auto;
-    border-radius: 30px;
     text-align: center;
     box-shadow: 3px 3px 3px -1px #07070a;
     border: 2px outset #636364;
-    background: #97b7bc3d;
+    background: rgba(182, 188, 151, 0.02);
     backdrop-filter: blur(4px);
   }
 
@@ -26,7 +24,7 @@
     display: block;
     padding: 4px 3px 3px;
     width: 115px;
-    color: #bed4d0;
+    color: #f2dfb3;
     margin: 10px auto;
     background: rgb(102, 102, 102);
     line-height: 30px;

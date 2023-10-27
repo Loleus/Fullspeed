@@ -89,7 +89,7 @@
   margin: 10px auto;
   background: rgb(102, 102, 102);
   line-height: 30px;
-  font-size: 26px;
+  font-size: 1.4em;
   cursor: pointer;
 }
 .root .main a.button.active,
